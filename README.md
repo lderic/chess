@@ -1,2 +1,2 @@
 # chess
-This is a app allow two people play chess online.
+This is an app allow two people play chess online.
