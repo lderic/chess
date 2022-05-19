@@ -1,6 +1,10 @@
-package com.lderic.chess.common.api
+package com.lderic.chess.server.common.api.player
+
+import com.lderic.chess.server.common.api.piece.Board
 
 interface Room {
+    val board: Board
+
     val first: Player
 
     val second: Player
