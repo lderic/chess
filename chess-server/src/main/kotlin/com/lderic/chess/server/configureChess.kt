@@ -1,4 +1,4 @@
-package com.lderic.chess
+package com.lderic.chess.server
 
 import io.ktor.server.application.*
 import io.ktor.server.routing.*

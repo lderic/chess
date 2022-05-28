@@ -1,4 +1,4 @@
-package com.lderic.chess
+package com.lderic.chess.server
 
 import io.ktor.server.engine.*
 import io.ktor.server.netty.*
