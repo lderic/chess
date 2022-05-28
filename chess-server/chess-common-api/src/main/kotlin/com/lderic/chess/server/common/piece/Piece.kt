@@ -1,4 +1,4 @@
-package com.lderic.chess.server.common.api.piece
+package com.lderic.chess.server.common.piece
 
 interface Piece {
     val board: Board
@@ -25,7 +25,7 @@ interface Piece {
 
     companion object {
         val None = object : Piece {
-            override val board: Board = Board.None
+            override val board: Board = throw IllegalStateException("None piece does not have a board")
 
             override val type: PieceType = PieceType.None
 
@@ -45,9 +45,7 @@ interface Piece {
 
             override val rightDown: Piece = this
 
-            override fun moveTo(x: Int, y: Int) {
-                throw IllegalStateException("Cannot move None piece")
-            }
+            override fun moveTo(x: Int, y: Int) = throw IllegalStateException("Cannot move None piece")
         }
     }
 }

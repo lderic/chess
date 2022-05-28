@@ -1,6 +1,6 @@
-package com.lderic.chess.server.common.api.piece
+package com.lderic.chess.server.common.piece
 
-import com.lderic.chess.server.common.api.player.Room
+import com.lderic.chess.server.common.player.Room
 
 interface Board {
     val room: Room
@@ -55,43 +55,4 @@ interface Board {
      * @return the piece at the given position.
      */
     fun replace(x: Int, y: Int, piece: Piece): Piece
-
-    companion object {
-        val None = object : Board {
-            override val room: Room
-                get() = throw UnsupportedOperationException()
-            override val currentType: PieceType
-                get() = throw UnsupportedOperationException()
-            override val nextType: PieceType
-                get() = throw UnsupportedOperationException()
-
-            override fun jumpToNext() {
-                throw UnsupportedOperationException()
-            }
-
-            override fun set(x: Int, y: Int, piece: Piece): Boolean {
-                throw UnsupportedOperationException()
-            }
-
-            override fun get(x: Int, y: Int): Piece {
-                throw UnsupportedOperationException()
-            }
-
-            override fun move(fromX: Int, fromY: Int, toX: Int, toY: Int): Boolean {
-                throw UnsupportedOperationException()
-            }
-
-            override fun moveAndReplace(fromX: Int, fromY: Int, toX: Int, toY: Int): Boolean {
-                throw UnsupportedOperationException()
-            }
-
-            override fun remove(x: Int, y: Int): Piece {
-                throw UnsupportedOperationException()
-            }
-
-            override fun replace(x: Int, y: Int, piece: Piece): Piece {
-                throw UnsupportedOperationException()
-            }
-        }
-    }
 }

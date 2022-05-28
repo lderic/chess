@@ -1,13 +1,15 @@
-package com.lderic.chess.server.common.api.player
+package com.lderic.chess.server.common.player
 
-import com.lderic.chess.server.common.api.piece.Board
+import com.lderic.chess.server.common.piece.Board
 
 interface Room {
     val board: Board
 
-    val first: Player
+    val name: String
 
-    val second: Player
+    val first: Player?
+
+    val second: Player?
 
     val observers: List<Player>
 
@@ -18,6 +20,8 @@ interface Room {
     fun leave(player: Player)
 
     fun start()
+
+    fun changeBoard(board: Board)
 
     enum class RoomState {
         WAITING,
